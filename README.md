@@ -19,4 +19,6 @@ ng g s Geolocation
 
 import it and provide in app.module.ts
 
-3. 
+3. Data Service
+
+ng g s Data
