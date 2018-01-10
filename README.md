@@ -47,3 +47,4 @@ ng g c List and ng g c Coffee
 
 6. Add page components
 
+https://material.io/icons/ - For adding icons
