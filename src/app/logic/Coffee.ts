@@ -12,7 +12,7 @@ export class Coffee {
 	notes: string;
 	tastingRating: TastingRating; // Type will be another class with a number representation
 
-	constructor(public name: string, public place: string, public location: PlaceLocation){
+	constructor(public name: string = "", public place: string = "", public location: PlaceLocation = null){
 		
 	}
 }
