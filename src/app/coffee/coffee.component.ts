@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Coffee } from '../logic/Coffee';
+import { GeolocationService } from '../geolocation.service';
 
 @Component({
   selector: 'app-coffee',
@@ -14,7 +15,7 @@ export class CoffeeComponent implements OnInit {
   coffee: Coffee; // coffee object of type coffee
   types = ["Espresso", "Ristretto", "Americano", "Cappuccino", "Frappe"];
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private geolocation: GeolocationService) { }
 
   routingSubscription: any;
 
@@ -25,6 +26,13 @@ export class CoffeeComponent implements OnInit {
   			console.log(params["id"]);
   		}
   	);
+
+    this.geolocation.requestLocation(location => { // If location is provided by user (A dialogue opens in browser)
+      if(location) {
+        this.coffee.location.latitude = location.latitude;
+        this.coffee.location.longitude = location.longitude;
+      }
+    });
   }
 
   ngOnDestroy(){
