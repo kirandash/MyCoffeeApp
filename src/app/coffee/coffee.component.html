@@ -24,6 +24,36 @@
 			<input matInput placeholder="City" name="city" [(ngModel)]="coffee.location.city">
 		</mat-input-container>
 	</mat-card>
+
+	<mat-card>
+		
+		<mat-card-subtitle>Overall Rating</mat-card-subtitle>
+		<mat-slider max="10" thumbLabel name="rating" [(ngModel)]="coffee.rating" tickInterval="1"></mat-slider> <!-- tickInterval is not to allow decimal -->
+		
+		<mat-slide-toggle #tastingSelector>Tasting Ratings</mat-slide-toggle>
+		
+		<section id="tasting" *ngIf="tastingSelector.checked">
+			
+			<label>Aroma</label>
+			<mat-slider max="10" thumbLabel name="aromaRating" [(ngModel)]="coffee.tastingRating.aroma" tickInterval="1"></mat-slider>
+
+			<label>body</label>
+			<mat-slider max="10" thumbLabel name="bodyRating" [(ngModel)]="coffee.tastingRating.body" tickInterval="1"></mat-slider>
+
+			<label>flavor</label>
+			<mat-slider max="10" thumbLabel name="flavorRating" [(ngModel)]="coffee.tastingRating.flavor" tickInterval="1"></mat-slider>
+
+			<label>intensity</label>
+			<mat-slider max="10" thumbLabel name="intensityRating" [(ngModel)]="coffee.tastingRating.intensity" tickInterval="1"></mat-slider>
+
+			<label>sweetness</label>
+			<mat-slider max="10" thumbLabel name="sweetnessRating" [(ngModel)]="coffee.tastingRating.sweetness" tickInterval="1"></mat-slider>
+
+			<label>aftertaste</label>
+			<mat-slider max="10" thumbLabel name="aftertasteRating" [(ngModel)]="coffee.tastingRating.aftertaste" tickInterval="1"></mat-slider>
+		</section>
+
+	</mat-card>
 	
 	<mat-card>
 		<mat-input-container>
