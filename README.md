@@ -70,3 +70,11 @@ import { Http } from '@angular/http';
 in app.module.ts 
 
 import { HttpModule } from '@angular/http';
+
+9. Web App manifest
+
+https://tomitm.github.io/appmanifest/
+
+https://app-manifest.firebaseapp.com/
+
+https://brucelawson.github.io/manifest/

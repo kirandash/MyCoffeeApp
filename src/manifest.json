@@ -1,0 +1,7 @@
+{
+	"name": "My Coffee App - The best app for coffee lovers.",
+	"start_url": "/", // beginning url when app is opened
+	"orientation": "any", // portrait or landscape or any
+	"scope": "/", // if project file is in a subfolder mention /subfolder
+	"display": "standalone" // standalone (full screen with status bar) or minimal-ui  or fullscreen (100% of screen including status bars)
+}
