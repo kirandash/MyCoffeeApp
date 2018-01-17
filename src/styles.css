@@ -1,1 +1,7 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+/* Root Styles */
+body {
+	background: #efdacb;
+	margin: 0;
+} 

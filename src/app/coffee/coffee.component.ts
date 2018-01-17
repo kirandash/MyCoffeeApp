@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Coffee } from '../logic/Coffee';
+import { TastingRating } from '../logic/TastingRating';
 import { GeolocationService } from '../geolocation.service';
 
 @Component({
@@ -18,6 +19,14 @@ export class CoffeeComponent implements OnInit {
   constructor(private route: ActivatedRoute, private geolocation: GeolocationService) { }
 
   routingSubscription: any;
+
+  tastingRatingChanged(checked: boolean) {
+    if(checked) {
+      this.coffee.tastingRating =  new TastingRating();
+    } else {
+      this.coffee.tastingRating = null; // delete or unset the property
+    }
+  }
 
   ngOnInit() {
     this.coffee = new Coffee();
@@ -37,6 +46,14 @@ export class CoffeeComponent implements OnInit {
 
   ngOnDestroy(){
   	this.routingSubscription.unsubscribe();
+  }
+
+  cancel() {
+
+  }
+
+  save() {
+    
   }
 
 }

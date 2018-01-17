@@ -1,5 +1,6 @@
 <form>
 	<mat-card>
+		<mat-card-title>Basic Coffee Information</mat-card-title>
 		<mat-input-container>
 			<input matInput placeholder="Coffee Name" name="name" [(ngModel)]="coffee.name">
 		</mat-input-container>
@@ -12,6 +13,7 @@
 	</mat-card>
 	
 	<mat-card>
+		<mat-card-title>Place Information</mat-card-title>
 		<mat-input-container>
 			<input matInput placeholder="Place Name" name="place" [(ngModel)]="coffee.place">
 		</mat-input-container>
@@ -26,12 +28,15 @@
 	</mat-card>
 
 	<mat-card>
-		
+		<mat-card-title>Ratings</mat-card-title>
 		<mat-card-subtitle>Overall Rating</mat-card-subtitle>
 		<mat-slider max="10" thumbLabel name="rating" [(ngModel)]="coffee.rating" tickInterval="1"></mat-slider> <!-- tickInterval is not to allow decimal -->
 		
-		<mat-slide-toggle #tastingSelector>Tasting Ratings</mat-slide-toggle>
-		
+		<mat-card-subtitle>
+			<mat-slide-toggle #tastingSelector
+			(change)="tastingRatingChanged(tastingSelector.checked)">Tasting Ratings</mat-slide-toggle>
+		</mat-card-subtitle>
+
 		<section id="tasting" *ngIf="tastingSelector.checked">
 			
 			<label>Aroma</label>
@@ -60,7 +65,13 @@
 			<textarea matInput placeholder="Notes" name="notes" [(ngModel)]="coffee.notes"></textarea>
 		</mat-input-container>
 	</mat-card>
+	
+	<mat-card>
+		<button mat-raised-button (click)="cancel()">Cancel</button>
+		<button mat-raised-button color="accent" (click)="save()">Save</button>
+	</mat-card>
 
+	<!-- Debugging -->
 	<mat-card>
 		{{ coffee | json }}
 	</mat-card>
