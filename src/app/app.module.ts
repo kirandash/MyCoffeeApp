@@ -16,6 +16,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { FormsModule } from '@angular/forms';
 
+import { HttpModule } from '@angular/http';
+
 const routes : Routes = [
   { path: '', component: ListComponent },
   { path: 'coffee', component: CoffeeComponent },
@@ -32,7 +34,8 @@ const routes : Routes = [
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule, BrowserAnimationsModule, MatButtonModule, MatIconModule, MatInputModule, MatSelectModule, MatSliderModule, MatToolbarModule, MatCardModule, MatSlideToggleModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ], // Imports for Angular point of view
   providers: [GeolocationService, DataService],
   bootstrap: [AppComponent]

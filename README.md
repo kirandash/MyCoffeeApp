@@ -60,3 +60,13 @@ npm install cors --save (cors is to render our API to third party server)
 node index
 
 And then open http://localhost:3000/ which will show the coffee object but with no data. So the API is up and running. Now it must link with mycoffeeapp
+
+8. Connect HTTP module provided by Angular instead of dummy data
+
+in data.service.ts
+
+import { Http } from '@angular/http'; 
+
+in app.module.ts 
+
+import { HttpModule } from '@angular/http';
