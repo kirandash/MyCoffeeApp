@@ -6,6 +6,7 @@ export class Coffee {
 	// Properties
 	// name: string;
 	// place: string;
+	_id: string; // _id in nedb
 	type: string;
 	// location: PlaceLocation; // Type will be another class
 	rating: number;

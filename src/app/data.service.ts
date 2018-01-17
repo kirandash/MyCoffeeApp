@@ -11,6 +11,13 @@ export class DataService {
 
   public endpoint = "http://localhost:3000";
 
+  get(coffeeId: string, callback){
+    this.http.get(`${this.endpoint}/coffees/${coffeeId}`).
+      subscribe(response => {
+        callback(response.json());
+      });
+  };
+
   getList(callback) {
   	// TODO: Change it with a real web service
   	/*const list = [

@@ -33,7 +33,8 @@
 		<mat-slider max="10" thumbLabel name="rating" [(ngModel)]="coffee.rating" tickInterval="1"></mat-slider> <!-- tickInterval is not to allow decimal -->
 		
 		<mat-card-subtitle>
-			<mat-slide-toggle #tastingSelector
+			<mat-slide-toggle #tastingSelector 
+			[checked] = "tastingEnabled"
 			(change)="tastingRatingChanged(tastingSelector.checked)">Tasting Ratings</mat-slide-toggle>
 		</mat-card-subtitle>
 

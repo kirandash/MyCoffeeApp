@@ -15,6 +15,7 @@ import { DataService } from '../data.service';
 export class CoffeeComponent implements OnInit {
 
   coffee: Coffee; // coffee object of type coffee
+  tastingEnabled: boolean = false;
   types = ["Espresso", "Ristretto", "Americano", "Cappuccino", "Frappe"];
 
   constructor(private route: ActivatedRoute, private geolocation: GeolocationService, private router: Router, private data: DataService) { }
@@ -34,6 +35,14 @@ export class CoffeeComponent implements OnInit {
   	this.routingSubscription = this.route.params.subscribe(
   		params => {
   			console.log(params["id"]);
+        if(params["id"]) {
+          this.data.get(params["id"], response=>{
+            this.coffee = response;
+            if(this.coffee.tastingRating){
+              this.tastingEnabled = true;
+            }
+          });
+        }
   		}
   	);
 
