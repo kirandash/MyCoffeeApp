@@ -28,7 +28,9 @@ export class GeolocationService {
   	// <a href="http://maps.google.com/?q=34.44,56.44"></a> - lat and lng
   	let query = "";
   	// Check if location class has lat lng or address provided
-  	if(location.latitude){
+  	if(location.address){
+      query = `${location.address}, ${location.city}`;
+    }else if(location.latitude){
   		query = location.latitude + "," + location.longitude;
   	} else {
   		query = `${location.address}, ${location.city}`;
