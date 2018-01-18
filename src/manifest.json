@@ -3,5 +3,26 @@
 	"start_url": "/", // beginning url when app is opened
 	"orientation": "any", // portrait or landscape or any
 	"scope": "/", // if project file is in a subfolder mention /subfolder
-	"display": "standalone" // standalone (full screen with status bar) or minimal-ui  or fullscreen (100% of screen including status bars)
+	"display": "standalone", // standalone (full screen with status bar) or minimal-ui  or fullscreen (100% of screen including status bars)
+	"short_name": "My Coffee App",// This will be used for other purposes when opened from app and not browser
+	"theme_color": "#472021", // This will be used for other purposes when opened from app and not browser
+	"background_color": "#c08764",
+	"icons": [
+		{
+			"src": "icon_96.png",
+			"sizes": "96x96"
+		},
+		{
+			"src": "icon_144.png",
+			"sizes": "144x144"
+		},
+		{
+			"src": "icon_192.png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "icon_512.png",
+			"sizes": "512x512"
+		}
+	] // Different icons for different devices
 }

@@ -78,3 +78,9 @@ https://tomitm.github.io/appmanifest/
 https://app-manifest.firebaseapp.com/
 
 https://brucelawson.github.io/manifest/
+
+10. Serve Icons
+
+Add icons folder to assets in angular-cli.json so that the icon folder can be served by angular app.
+
+Note that you have to run ng serve again.
