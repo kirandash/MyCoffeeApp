@@ -71,7 +71,7 @@ in app.module.ts
 
 import { HttpModule } from '@angular/http';
 
-9. Web App manifest
+9. Web App manifest - Don't add any comments in this file or it won't read. (To verify - open chrome and go to Application tab in inspector and check manifest)
 
 https://tomitm.github.io/appmanifest/
 
@@ -84,3 +84,8 @@ https://brucelawson.github.io/manifest/
 Add icons folder to assets in angular-cli.json so that the icon folder can be served by angular app.
 
 Note that you have to run ng serve again.
+
+11. Installable PWA
+
+They have a + icon in browser or add to home page (in chrome beta phase) - this will add icon to home page and also to launcher and then it will also appear under applications manager.
+
